@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "./es",
+    "allowJs": false,
+    "strict": true,
+    "target": "es2015",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "inlineSourceMap": false,
+    "inlineSources": true,
+    "declaration": true,
+    "declarationMap": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "./ts/**/*.ts"
+  ],
+  "compileOnSave": false
+}
