@@ -2,6 +2,7 @@
   "name": "2d-solver",
   "version": "1.0.0",
   "description": "",
+  "repository": "github:abersnaze/2d-solver",
   "main": "js/index.js",
   "scripts": {
     "test": "ava",
@@ -10,7 +11,7 @@
     "tsc": "tsc",
     "babel": "babel --source-maps -d js es",
     "compile": "npm run tsc && npm run babel",
-    "watch": "ava -w",
+    "watch": "ava -w -v",
     "prepublish": "npm run clean && npm run tslint && npm run test && npm run compile"
   },
   "keywords": [],
@@ -48,5 +49,8 @@
       "esm",
       "ts-node/register"
     ]
+  },
+  "dependencies": {
+    "fast-equals": "^2.0.0"
   }
 }
