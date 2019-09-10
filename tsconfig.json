@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./es",
+    "outDir": "./dist",
     "allowJs": false,
     "strict": true,
     "target": "es2015",
@@ -11,10 +11,12 @@
     "inlineSources": true,
     "declaration": true,
     "declarationMap": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "esModuleInterop": true
   },
   "include": [
-    "./ts/**/*.ts"
+    "./src/**/*.ts",
+    "./test/**/*.ts"
   ],
   "compileOnSave": false
 }

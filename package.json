@@ -1,61 +1,39 @@
 {
   "name": "2d-solver",
   "version": "2.0.0",
-  "description": "",
   "repository": "github:abersnaze/2d-solver",
-  "main": "js/index.js",
+  "description": "Library for building expressions and computing derivatives",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "ava",
-    "clean": "rimraf ./es ./js",
-    "tslint": "tslint -p tsconfig.json",
-    "tsc": "tsc",
-    "babel": "babel --source-maps -d js es",
-    "compile": "npm run tsc && npm run babel",
-    "watch": "ava -w -v",
-    "prepublish": "npm run clean && npm run tslint && npm run test && npm run compile"
+    "test": "jest",
+    "watch": "jest --watch",
+    "clean": "rm -rf ./dist ./coverage",
+    "lint": "tslint -p tsconfig.json",
+    "compile": "tsc",
+    "prepare": "npm run clean && npm run lint && npm run test && npm run compile"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "math",
+    "algebra",
+    "expression",
+    "derivative"
+  ],
+  "author": "George Campbell",
   "license": "ISC",
   "devDependencies": {
-    "@ava/babel": "^1.0.1",
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/runtime": "^7.5.5",
-    "@types/node": "^12.7.3",
-    "ava": "^5.2.0",
-    "esm": "^3.2.25",
-    "fsevents": "^2.3.2",
-    "rimraf": "^3.0.0",
-    "ts-node": "^8.3.0",
-    "tslint": "^5.19.0",
-    "typescript": "^3.6.2"
+    "@types/jest": "^26.0.14",
+    "jest": "^26.5.2",
+    "ts-jest": "^26.4.1",
+    "tslint": "^6.1.3",
+    "typescript": "^4.0.3"
   },
-  "peerDependencies": {
-    "@babel/runtime": "^7.5.5"
-  },
-  "types": "es/index.d.ts",
-  "module": "es/index.js",
-  "ava": {
-    "babel": {
-      "compileEnhancements": false
-    },
-    "extensions": [
-      "ts"
-    ],
-    "files": [
-      "./ts/**/*.test.ts"
-    ],
-    "require": [
-      "esm",
-      "ts-node/register"
-    ]
-  },
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
   "dependencies": {
-    "core-js": "3.3",
-    "fast-equals": "^2.0.0"
+    "2d-algebra": "^1.2.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "collectCoverage": true
   }
 }
