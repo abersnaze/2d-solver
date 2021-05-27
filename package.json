@@ -18,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@ava/babel": "^1.0.1",
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
@@ -25,8 +26,9 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/runtime": "^7.5.5",
     "@types/node": "^12.7.3",
-    "ava": "^2.3.0",
+    "ava": "^3.15.0",
     "esm": "^3.2.25",
+    "fsevents": "^2.3.2",
     "rimraf": "^3.0.0",
     "ts-node": "^8.3.0",
     "tslint": "^5.19.0",
@@ -38,7 +40,9 @@
   "types": "es/index.d.ts",
   "module": "es/index.js",
   "ava": {
-    "compileEnhancements": false,
+    "babel": {
+      "compileEnhancements": false
+    },
     "extensions": [
       "ts"
     ],
@@ -51,6 +55,7 @@
     ]
   },
   "dependencies": {
+    "core-js": "3.3",
     "fast-equals": "^2.0.0"
   }
 }
